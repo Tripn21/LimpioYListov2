@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precios</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    /* Estilos específicos de Precios */
+    .precios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .card i {
+      font-size: 2rem;
+      color: #3498db;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+
+    .card p {
+      margin: 0.5rem 0;
+    }
+
+    .precio {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #3498db;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Menú lateral -->
+    <nav class="sidebar">
+      <h2>Limpio y Listo</h2>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a href="mision-vision.html"><i class="fas fa-bullseye"></i> Misión y Visión</a></li>
+        <li><a href="quienes-somos.html"><i class="fas fa-users"></i> ¿Quiénes somos?</a></li>
+        <li><a href="personal.html"><i class="fas fa-user-tie"></i> Nuestro Personal</a></li>
+        <li><a href="precios.html"><i class="fas fa-tags"></i> Precios</a></li>
+        <li><a href="sobre-mi.html"><i class="fas fa-store"></i> Sucursales</a></li>
+        <li><a href="contacto.html"><i class="fas fa-phone"></i> Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="content">
+      <h1>Precios</h1>
+      <div class="precios">
+        <div class="card">
+          <i class="fas fa-car"></i>
+          <h3>Lavado Completo</h3>
+          <p class="precio">C$150</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-spray-can-sparkles"></i>
+          <h3>Pulido y Encerado</h3>
+          <p class="precio">C$300</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-vacuum"></i>
+          <h3>Detalle Interior</h3>
+          <p class="precio">C$250</p>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

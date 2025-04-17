@@ -1,27 +1,111 @@
-index.html
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Lavanderia Limpio y Listo</title>
+  <title>Lavandería Limpio y Listo</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Leaflet CSS para mapa interactivo -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
-  <header>
-    <h1>Hola, Somos lavanderia limpio y listo, estamos presentes en Somoto, Ocotal y Proximamente en Jalapa 👋</h1>
-    <nav>
-      <a href="index.html">Inicio</a> |
-      <a href="sobre-mi.html">Sucursales</a> |
-      <a href="proyectos.html">Ofertas</a> |
-      <a href="contacto.html">Contacto +505 86150985</a>
-    </nav>
-  </header>
 
-  <section>
-    <h2>Bienvenido a nuestra tienda en linea</h2>
-    <p>Limpio y listo, Tu solución en Lavado, Secado y Planchado, Horario de atencion de lunes a domingo .</p>
-  </section>
+  <div class="container">
+    <!-- Menú lateral -->
+    <nav class="sidebar">
+      <h2>Limpio y Listo</h2>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a href="mision-vision.html"><i class="fas fa-bullseye"></i> Misión y Visión</a></li>
+        <li><a href="quienes-somos.html"><i class="fas fa-users"></i> ¿Quiénes somos?</a></li>
+        <li><a href="personal.html"><i class="fas fa-user-tie"></i> Nuestro Personal</a></li>
+        <li><a href="precios.html"><i class="fas fa-tags"></i> Precios</a></li>
+        <li><a href="sobre-mi.html"><i class="fas fa-store"></i> Sucursales</a></li>
+        <li><a href="contacto.html"><i class="fas fa-phone"></i> Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="content">
+      <section id="inicio">
+        <h1>Bienvenido a Lavandería Limpio y Listo</h1>
+        <p>Tu mejor aliado en lavado, secado y planchado. Servicio de calidad, de lunes a domingo.</p>
+
+        <div style="display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+          <div style="text-align: center;">
+            <i class="fas fa-soap fa-3x" style="color:#3498db;"></i>
+            <p>Lavado con cuidado</p>
+          </div>
+          <div style="text-align: center;">
+            <i class="fas fa-tshirt fa-3x" style="color:#3498db;"></i>
+            <p>Planchado profesional</p>
+          </div>
+          <div style="text-align: center;">
+            <i class="fas fa-wind fa-3x" style="color:#3498db;"></i>
+            <p>Secado eficiente</p>
+          </div>
+          <div style="text-align: center;">
+            <i class="fas fa-clock fa-3x" style="color:#3498db;"></i>
+            <p>Rápido y puntual</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mapa interactivo -->
+      <section id="mapa">
+        <h2>Ubica nuestras sucursales</h2>
+        <div id="map" style="height: 500px;"></div>
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script>
+          var map = L.map('map').setView([13.6787128, -86.3315268], 10);  // Coordenadas de Nicaragua
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+
+          // Agregar marcadores para las sucursales
+          L.marker([13.48781, -86.5829974]).addTo(map)  // Somoto
+            .bindPopup('Sucursal en Somoto')
+            .openPopup();
+
+          L.marker([13.918829, -86.12116]).addTo(map)  // Jalapa
+            .bindPopup('Sucursal en Jalapa')
+            .openPopup();
+
+          L.marker([13.628790, -86.474560]).addTo(map)  // Ocotal
+            .bindPopup('Sucursal en Ocotal')
+            .openPopup();
+        </script>
+      </section>
+
+      <!-- Ofertas -->
+      <section id="ofertas">
+        <h2>Ofertas Especiales</h2>
+        <p>¡Aprovecha nuestras promociones de temporada y descuentos especiales!</p>
+        <ul>
+          <li><strong>Lavado + Planchado:</strong> 20% de descuento en tu primera visita.</li>
+          <li><strong>Paquete Familiar:</strong> Obtén 2 lavados gratis por cada 5 servicios.</li>
+          <li><strong>Descuento de Verano:</strong> 15% de descuento en todos los servicios hasta el 30 de junio.</li>
+        </ul>
+      </section>
+
+      <!-- Preguntas Frecuentes (FAQ) -->
+      <section id="faq">
+        <h2>Preguntas Frecuentes</h2>
+        <dl>
+          <dt>¿Cuánto tiempo tarda el servicio?</dt>
+          <dd>Dependiendo del servicio, generalmente entre 2 a 4 horas.</dd>
+
+          <dt>¿Ofrecen servicios a domicilio?</dt>
+          <dd>Sí, ofrecemos servicio de recogida y entrega a domicilio dentro de un área determinada.</dd>
+
+          <dt>¿Cómo puedo hacer un pedido?</dt>
+          <dd>Puedes hacer un pedido llamándonos al 123-456-789 o a través de nuestra página web.</dd>
+        </dl>
+      </section>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>

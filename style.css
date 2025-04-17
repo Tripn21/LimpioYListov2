@@ -1,53 +1,140 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f8ff;
+/* Reset básico */
+* {
   margin: 0;
   padding: 0;
-  color: #333;
+  box-sizing: border-box;
 }
 
-header {
-  background-color: #00bcd4;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #dff1ff, #f6fcff);
+  display: flex;
+  height: 100vh;
+  color: #2c3e50;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(135deg, #2980b9, #3498db);
   color: white;
-  padding: 20px;
+  padding: 2rem 1.5rem;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
   text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
 }
 
-nav a {
-  color: white;
-  margin: 0 15px;
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 1.2rem 0;
+}
+
+.sidebar ul li a {
   text-decoration: none;
-  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
-nav a:hover {
+/* Animación para los enlaces del menú lateral */
+.sidebar ul li a i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.sidebar ul li a:hover {
+  transform: translateX(5px);
+  color: #e0f7ff;
+}
+
+.sidebar ul li a i:hover {
+  transform: rotate(20deg);
+}
+
+/* Contenido */
+.content {
+  margin-left: 260px;
+  padding: 2rem;
+  width: calc(100% - 260px);
+  overflow-y: auto;
+}
+
+.content h1, .content h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+/* Secciones como tarjetas */
+section {
+  background: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Listas dentro de secciones */
+section ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+/* Enlaces */
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
   text-decoration: underline;
 }
 
-section {
-  padding: 40px;
-  text-align: center;
-}
-
-h2 {
-  color: #00bcd4;
-}
-
-.sucursales {
+/* Íconos grandes en el index (Inicio) */
+.icon-row {
   display: flex;
-  flex-direction: column;
   gap: 2rem;
-  padding: 1rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
-.sucursal {
-  background-color: #f5f5f5;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.icon-box {
+  width: 130px;
+  height: 130px;
+  background: #ecf6fb;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
 }
 
-.sucursal img {
-  border-radius: 8px;
-  margin-top: 0.5rem;
+.icon-box:hover {
+  transform: scale(1.05);
+}
+
+.icon-box i {
+  font-size: 2.5rem;
+  color: #3498db;
+  margin-bottom: 0.5rem;
 }
