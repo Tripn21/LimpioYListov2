@@ -138,3 +138,63 @@ a:hover {
   color: #3498db;
   margin-bottom: 0.5rem;
 }
+
+/* Media queries para pantallas más pequeñas (móviles y tabletas) */
+@media (max-width: 768px) {
+  /* Hacer el diseño en columnas para pantallas pequeñas */
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%; /* La barra lateral ocupa toda la pantalla */
+    margin-bottom: 20px;
+  }
+
+  .content {
+    width: 100%; /* El contenido ocupa toda la pantalla */
+    margin-left: 0; /* Eliminar margen izquierdo */
+  }
+
+  /* Ajustar los íconos */
+  i {
+    font-size: 1.5rem; /* Reducir el tamaño de los íconos */
+  }
+
+  /* Ajustar el mapa a una altura más pequeña en móviles */
+  #map {
+    height: 300px; /* Ajustar el tamaño del mapa */
+  }
+
+  /* Ajustar los bloques de las ofertas */
+  #ofertas ul {
+    padding-left: 20px;
+  }
+
+  #ofertas ul li {
+    margin-bottom: 1rem;
+  }
+
+  /* Ajustar preguntas frecuentes */
+  #faq dl {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #faq dt {
+    margin-top: 1rem;
+  }
+
+  #faq dd {
+    margin-bottom: 1rem;
+  }
+
+  /* Ajustar la barra lateral */
+  .sidebar ul li a {
+    font-size: 1rem; /* Reducir el tamaño de texto en el menú */
+  }
+
+  .sidebar ul li a i {
+    font-size: 1.5rem; /* Reducir el tamaño de los íconos del menú */
+  }
+}
